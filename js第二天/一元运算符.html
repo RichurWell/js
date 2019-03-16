@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       /*
+           ++    -- 
+
+             var   num=10;
+           num++;  //自身加1
+           console.log(num);
+           ++num;   //自身加1  
+
+           如果++ 在后面：例如var   sum=num++ +10;  先参与运算  再自身加1
+           如果++ 在前面：例如var  sum2=++a +10;   先自身加一  然后再参与运算
+
+           如果-- 在后面：例如var   var   sum=num-- +10;  先参与运算  再自身加1
+           如果-- 在前面：例如var  sum2=--a +10;   先自身加一  然后再参与运算
+       */
+         
+
+
+           var  num=10;
+           var   sum=num++ +10;
+           console.log(sum);     //20    
+           console.log(num);     //11
+
+           var a=10;
+           var  sum2=++a +10;
+           console.log(sum2);  //21    
+           console.log(a);   //11
+
+
+           var  num=10;
+           var   sum=num-- +10;
+           console.log(sum);     //20    
+           console.log(num);     //9
+
+           var a=10;
+           var  sum2=--a +10;
+           console.log(sum2);  //19  
+           console.log(a);   //11
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

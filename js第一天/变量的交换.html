@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        /*
+           格式化代码  alt+shift+f   缺点：代码错误的时候，快捷键无效
+           变量名不许重复
+           shift+alt+up/down   向上向下复制一行
+        */
+        //变量的交换，第一个思路： 使用第三方变量进行交换
+        var num1 = 10;
+        var num2 = 20;
+        var temp = num1;
+        num1 = num2;
+        num2 = temp;
+        console.log(num2);//10
+        console.log(num1);//20
+        //第二种思路：（适合于数字的交换）
+        var num3 = 30;
+        var num4 = 40;
+        num3 = num3 + num4;       //num3=70
+        num4 = num3 - num4        //num4=30
+        num3 = num3 - num4;      //num3=40
+        console.log(num3,num4);
+       //第三种思路：扩展变量名交换   只需要看代码  不需要懂-------位运算，前端会前两个足够
+          var  num1=10;
+          var  num2=20;
+          num1=num1^num2;
+          num2=num1^num2;
+          num1=num1^num2;
+          console.log(num1,num2);
+        
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

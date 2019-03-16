@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //作用域
+        //全局变量：声明的变量是使用var声明的，那么这个变量就是全局变量，可以在页面的任意位置使用。
+        //局部变量：在函数内部定义的变量是局部变量，外面不能使用，
+
+        // 除了函数意外，其他的任何位置定义的变量都是全局变量
+        //全局变量如果页面不关闭，内存不释放，就会占空间，
+        //局部变量，就是函数调用完了，就会释放
+
+
+
+        /*块作用域：一个大括号可以看做一块，在这个作用域里面使用的变量，变量的作用范围
+                    但是在js中没有块级作用域这个说法，函数除外！！！！
+
+                    js块里面定义的东西外面可以使用
+          隐式全局变量：声明的变量没有var  就是隐式全局变量
+
+          全局变量是不能被删除的，隐式全局变量是可以被删除的
+                    
+        */
+        function f1() {
+            number = 99; //隐式全局变量
+        }
+        // f1();
+
+        console.log(number);
+
+
+        {
+
+
+            var num = 10;
+            console.log(num); //10
+        }
+        console.log(num); //10
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

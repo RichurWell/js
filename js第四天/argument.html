@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //计算两个数字的和、三个数字的和，四个。。。。 N个，不知道用户是否传入参数，或者不知道用户穿了几个参数
+        //如果在函数中知道参数个数，也知道每个参数的值那么就可以计算，怎么知道个数呢
+        //     function f() {
+        //         //获取函数传入几个参数
+        //         console.log(arguments.length);
+        //         //使用arguments获取传入参数的每个参数值
+        //         console.log(arguments);
+
+        //     }
+        //     f(1, 2, 3, 4, 5, 6);
+        function f1() {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i]; //此时argument被当成了数组，伪数组
+            }
+            console.log(sum);
+        }
+
+        f1(3, 4, 5, 6, 7);
+
+
+        //
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //案例1：求数组中所有元素的和
+        var arr1 = [10, 20, 30, 40, 50];
+        var sum = 0;
+        for (var i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+        }
+        alert(sum);
+
+        //案例2：求数组中所有元素的平均值
+        var arr2 = [10, 20, 30, 40, 50];
+        var sum = 0;
+        for (var i = 0; i < arr2.length; i++) {
+            sum += arr2[i];
+        }
+        alert(sum / arr2.length);
+
+        //案例3：求数组中所有元素的最大值
+        var arr3 = [10, 20, 100, 30, 40, 50];
+        var max = arr3[0];
+        for (var i = 1; i <= arr3.length; i++) {
+            if (arr3[i] > max) {
+                max = arr3[i];
+            }
+
+        }
+        alert(max);
+
+        //案例4：求数组中所有元素的最小值
+        var arr4 = [10, 20, 100, 30, 40, 5, 50];
+        var min = arr3[0];
+        for (var i = 1; i <= arr4.length; i++) {
+            if (arr3[i] < max) {
+                min = arr4[i];
+            }
+        }
+        alert(min);
+        //案例5：倒序循环遍历数组
+        var arr5 = [10, 20, 30, 40, 50, 70, 60, 80, 45]
+        for (var i = arr5.length - 1; i >= 0; i--) {
+            console.log(arr5[i]);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

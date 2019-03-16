@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <!-- js代码的注意问题
+          1、  在一对script标签中有错误的js代码，那么该错误的代码后面的js代码不会执行！！！
+          2、  如果第一对script标签中有错误，不会影响后面的script标签对中的代码
+          3、 script的标签中可以写  type="text/javascript"标准写法    language="JavaScript"‘
+              type和language  可以省略  因为遵循html5标准
+          4、   可能同时出现 type="text/javascript"   language="JavaScript"  没错
+          5、script可以吃出现多对
+          6、  script一般放在body中的最后，也可以放在head标签中
+          7、如果script是引入外部文件的作用，这个标签就不要写js代码了，如果想写的话，重写一个script标签
+     -->
+     <script>
+        alert("hahah")'''''''
+        alert("hahah2");
+     </script>
+     <script>
+        alert("hahah3");
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

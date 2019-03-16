@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //案例8：提示用户输入班级人数，求总成绩，平均值，做高分，最低分
+        //提示用户输入班级人数，并且转化成数字
+        var perCount = parseInt(prompt("请输入班级人数"));
+        var score = [];
+        var sum = 0;
+        var average = 0;
+
+        for (var i = 0; i < perCount; i++) {
+
+            score[score.length] = parseInt(prompt("请输入第" + (i + 1) + "人的成绩"));
+        }
+        //计算总成绩
+        for (var j = 0; j < perCount; j++) {
+            sum += score[j];
+        }
+        console.log("总成绩：" + sum + "分");
+        //计算平均分
+        average = sum / perCount;
+        console.log("平均成绩：" + average + "分");
+        //最高分
+        var max = score[0];
+        var min = score[0];
+        for (var n = 0; n < perCount; n++) {
+            if (max < score[n]) {
+                max = score[n];
+            }
+        }
+        console.log("最高分" + max)
+
+        for (var m = 0; n < perCount; m++) {
+            if (max > score[m]) {
+                min = score[m];
+            }
+        }
+        console.log("最低分" + min)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

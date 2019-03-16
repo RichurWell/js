@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+                                                                                  函数的定义方式:
+                                                                                           两种：
+
+                                                                                             命名函数：函数如果有名字，就是命名函数
+                                                                                             匿名函数：函数如果没有名字，就是匿名函数
+
+                                                                                   函数的另一种命名方式：
+                                                                                           1、函数声明====函数定义
+
+                                                                                           function  函数名(){
+                                                                                               函数体；
+                                                                                           } 
+                                                                                           
+                                                                                           2、把一个函数给一个变量，此时形成了函数表达式
+                                                                                           var 变量=匿名函数；
+                                                                                           例子
+                                                                                                var f1=function(){
+
+                                                                                                };    //赋值结束后必须有分号
+                                                                                                如果是函数表达式，那么此时的变量中存储的是一个函数，
+                                                                                                而且这个变量相当于是一个函数，就可以直接加小括号调用了
+                                                                                                f1()；
+
+                                                                                            注意：函数表达式赋值后必须加分号
+                                                                                             
+                                                                                  */
+
+
+
+        //函数声明
+        function f1() {
+            console.log("hahahah");
+        }
+        f1(); //wwwwww   调的是下面这个表达式，只要重名了，后面的覆盖前面
+        function f1() {
+            console.log("wwwwww");
+        }
+        f1();
+
+
+        //函数表达式 
+        var f2 = function() {
+            console.log("ppppppppp");
+        };
+        f2(); //pppppppppp
+        (function() {
+            console.log("mmmmmmmmmmmm");
+        })(); //一次性的，函数的自调用，没有名字，声明的同时直接调用
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

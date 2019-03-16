@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //声明变量并且初始化
+        /*
+           js原始类型   number   string   boolean   null   undefined  object    Symbol(ECMAScript 6 新定义)
+             number   数字类型（整数和小数）
+             string  字符串类型（单引号或者双引号）
+             boolean   布尔类型  true  1    false  0
+              null    空类型，值只有一个 null   
+              undefined  未定义   值只有一个：undefined
+              object:对象 
+        
+        */
+        var  num=10;
+        var  sex1=true;   //男
+        var  sex2=false;   //女
+
+        //什么情况下结果是undefined ?  第一： 变量名声明了，没有赋值   第二：函数没有明确返回值  
+        var  name;
+        console.log(name);  //undefined
+        console.log(name+10); //NaN ,也没有意义
+
+     //如何获取这个变量的数据类型
+           /*
+               typeof(变量名)
+               typeof 变量名
+           */
+         var  num8=10;
+         var  str="小白";
+         var  obj=new Object();
+         var nll=null;
+         var undef=undefined;
+         console.log(typeof num8);  //number
+         console.log(typeof str);  //string
+         console.log(obj);   //object
+         console.log(typeof nll);//object   不是null
+         console.log(typeof undef);//undefined
+         console.log(String(nll));  //null
+         console.log(String(undef));   //undefined
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+                                                          数组：一组数据，一组有序的数据
+                                                                可以一次性存储多个数据
+                                                                数组定义：
+                                                                     1、通过构造函数构造数组
+                                                                          var  数组名=new Array()
+                                                                           var array = new Array();//空数组
+                                                                           数组的名字，直接输出，可以直接把数组中的数据直接输出，没有数据，输出空的
+                                                                           var array = new array(5);/
+                                                                         
+                                                                     2、通过字面量的方式创建数组
+                                                                        var 数组名=[];                                 
+                                                         注意：无论是字面量的方式还是构造函数的方式，定义的数组，如果有长度，name默认是undefined
+                                                         数组元素：数组中存储的每个数据，都可以叫做数组的元素
+                                                         数组长度：元素个数
+                                                         数组索引（下标）
+
+                                                          特别注意：在构造函数的方式中创造数组，只含有一个数字  new Array(5)  这个5表示数据长度
+                                                                                             含多个值，这个数组就有长度了，数据个数就是数组长度
+                                                         
+
+
+                                                                     请输入班级人数，根据班级人数，输入每个学生的数学成绩，求总成绩，求平均法，求最高分
+
+                                                                                         */
+
+        var array = new Array(5); //构造函数的方式，这个数组长度是5，每个数据都是undefined
+        var array2 = new Array(6, 7, 8, 9); //构造函数的方式，这个数组长度是2 ，分别是6,7
+        alert(array.length);
+        alert(array[4]); //undefined
+        alert(array2.length); //2
+        alert(array2[1]);
+
+        var arr = [5, 3, 5];
+        alert(arr.length);
+    </script>
+    <script>
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

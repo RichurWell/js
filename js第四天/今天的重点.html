@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+                                                                                                    函数的注意问题：
+                                                                                                          函数外面的num1和形参的num1不是同一个变量
+
+                                                                                                    作用域
+                                                                                                    预解析
+                                                                                                    对象
+                                                                                               */
+        //求两个数中的最大值（分析：有参数，两个参数，有返回值）
+        function max(x, y) {
+            return x > y ? x : y
+        }
+        console.log(max(3, 5));
+        //求三个数中的最大值(分析：有参数，三个参数，有返回值)
+        function max1(a, b, c) {
+            return a > b ? (a > c ? a : c) : (b > c ? b : c);
+        }
+        console.log(max(7, 6, 5));
+
+
+        //判断一个数是不是素数，只能被1和自身整除  素数就是质数，从2开始
+        //用这个数字和之前的所有的数字整除一次，当然这个里面没有1，也没有自身
+        // function ZNumber(x) {
+        //     if (x >= 2) {
+        //         for (var i = x - 1; i > 1; i--) {
+        //             if (x % i == 0) { //如果这个树就是质数，跳出循环，这个树就是质数，否则继续循环
+        //                 return "这个数是质数";
+        //             }
+        //         }
+        //         return "这个数不是质数";
+        //     }
+        // }
+        function ZNumber(x) {
+            if (x >= 2) {
+                for (var i = x - 1; i > 1; i--) {
+                    if (x % i == 0) { //如果这个树就是质数，跳出循环，这个树就是质数，否则继续循环
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        console.log(ZNumber(5) ? "这个数是不质数" : "这个数是质数");
+        console.log(ZNumber(3) ? "这个数是不质数" : "这个数是质数");
+        console.log(ZNumber(8) ? "这个数是不质数" : "这个数是质数");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
