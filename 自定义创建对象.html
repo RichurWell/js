@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //自定义构造函数创建对象
+        //函数和构造函数区别，就是名字是不是大写（首字母大写）
+        function Person() {
+            //构造函数主要是为了创建对象，与函数区别不大。作用不同，大写主要就是为了提示程序员，这里可能创建对象了
+
+            this.name = "小明";
+            this.age = 10;
+            this.sayHi = function() {
+                console.log("我叫" + this.name + "今年" + this.age);
+            };
+        }
+
+        /*
+           var abj = new Person(); 
+           当这行代码执行的时候上面发送四件事，
+           1 在内存中开辟空间，存储创建的新的对象
+           2 把this设置成当前的对象
+           3 设置对象的属性和方法的值
+           4 把this对象的值返回
+         
+        */
+        var abj = new Person();
+
+        console.log(abj.age);
+        abj.sayHi();
+        console.log(abj instanceof Person);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

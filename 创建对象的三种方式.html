@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+                          //创建对象的三种方式
+
+                          1、调用系统的构造函数
+                          2、自定义构造函数   （结合第一种）
+                          3、字面量的方式创建对象   
+                       */
+
+        //第一种创建对象的方式 
+        //实例化一个对象obj
+        var obj = new Object(); //Object 系统的构造函数
+        //现在这个对象没属性，下面开始添加属性
+        obj.name = "小微";
+        obj.sex = "女";
+        //添加方法
+        obj.eat = function() {
+            console.log("在吃东西");
+        }
+        obj.play = function() {
+            console.log("在玩游戏");
+        }
+        console.log(obj.name);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
