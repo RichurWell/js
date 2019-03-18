@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*原始数据类型：number ,string boolean,undefined,null ,object
+                                                   基本数据类型：number，string，boolean
+                                                   复杂类型：（引用）object
+                                                   空类型：undefined null
+                                                   
+                                                   
+                                                   值类型的值在哪一块空间存储？    栈中存储
+                                                   引用类型的值在哪一块空间存储？    栈和堆中存储（地址在栈中，对象在堆中）
+                                                 
+                                                 */
+
+        var num = 10; //值类型
+        var obj = {}; //复杂类型，对象在堆上，地址（引用）在栈
+        //值类型之间传递的是值
+        function f1(x) {
+            x = 100;
+        }
+        var num = 10;
+        f1(num);
+        console.log(num); //10 
+
+
+
+        //引用类型传递的是地址（引用）
+        var obj = {
+            name: "小明"
+        };
+
+        function f2(obj2) {
+            obj2.name = "小红";
+        }
+        console.log(obj.name); //小明
+        f2(obj);
+        console.log(obj.name); //小红  ，obj给了obj2，则两个人指向就变成一样了
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*创建空对象
+                                                        var obj = {
+                                                                "sex": "男"
+                                                            }
+                                                            //判断对象中有没有sex属性,if()即可判断
+                                                        if (obj["age"]) {
+                                                            console.log("有啊");
+                                                        } else {
+                                                            console.log("没有");
+                                                        }
+                                                        */
+        //案例：想找这个字符串，每个字母出现多少次
+        var str3 = "wwwwwwww,ddkedljwkjdkauhdw,eewwqsws";
+        //第一步：创建新的对象，把所有的字母全部变成大写或者小写
+        str3 = str3.toLocaleLowerCase();
+        //  console.log(str3);
+        //创建一个空对象，目的把字母作为键，次数作为值
+        var obj = {};
+        //第三步，遍历字符串，获取每个字母
+        for (var i = 0; i < str3.length; i++) {
+            var key = str3[i]; //代表每个字母
+            //    console.log(key);
+            if (obj[key]) {
+                obj[key]++;
+            } else {
+                // 对象中没有这个字母，就把字母加到对象中，
+                obj[key] = 1;
+            }
+        }
+        //遍历对象，显示每个字母出现的次数
+        for (var key in obj) {
+            console.log(key + "这个字母出现了" + obj[key] + "次");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
