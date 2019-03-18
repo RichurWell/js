@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //字面量创建对象：缺陷, 一次性对象，不能传值
+
+
+
+        var arr = {} //空对象
+        arr.name = "小白";
+        arr.age = "13";
+
+        //优化后写法
+        var obj2 = {
+            name: "小黑",
+            age: 20,
+            sayHi: function() {
+                console.log("我是" + obj2.name);
+            }
+
+        };
+        obj2.name = "小白";
+        obj2.sayHi();
+
+        //点语法：  对象.名字=值；   对象.名字=函数
+        /*
+          js   是一门解释性、
+                     脚本、
+                     弱类型语言，
+                     声明都用var
+                     动态类型
+                     
+      
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

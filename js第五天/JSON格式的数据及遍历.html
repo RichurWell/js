@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //JSON   一种轻量级交换格式
+        /*       对象：有属性和方法
+                      是一组有序属性的集合，属性的值可以是任意的类型
+
+                
+             
+        */
+        function Person() {
+            //构造函数主要是为了创建对象，与函数区别不大。作用不同，大写主要就是为了提示程序员，这里可能创建对象了
+
+            this.name = "小明";
+            this.age = 10;
+            this.sayHi = function() {
+                console.log("我叫" + this.name + "今年" + this.age);
+            };
+        }
+
+
+        //json格式的数据，都是成对，是键值对
+
+        //json也是一个对象，数据是成对的，一般json格式的数据无论是键还是值，都是用双引号括起来的
+        var obj = {
+            "name": "小明",
+            "age": "19",
+            "sex": "男"
+        };
+        var key = "name";
+        console.log(obj[key]);
+        //遍历对象是不能通过for循环
+        for (var key in obj) {
+            // console.log(key);   //key 是遍历，该变量存储的是该对象所有的属性的名字
+            console.log(obj[key]);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

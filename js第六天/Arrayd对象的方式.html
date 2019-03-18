@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="common.js"></script>
+    <script>
+        //判断是不是数组的两种方式
+        //第一种：Array.isArray（对象） 判断这个对象是不是数组        （ 静态方法，就是大写的构造函数或者对象调用的） 
+        //第二种：instanceof   关键字
+        console.log(Array.isArray([1, 2, 3])); // true
+        console.log(Array.isArray({
+            foo: 123
+        })); //false
+        console.log(Array.isArray('foobar')); //false
+        console.log(Array.isArray(undefined)); //false
+        var obj = [];
+        console.log(obj instanceof Array); //true
+
+        //Array.from（）方法从类似数组或可迭代的对象创建一个新的，浅复制的Array实例
+        console.log(Array.from('foo')); //["f", "o", "o"]
+
+
+
+        //concat（）方法用于合并两个或多个数组。 此方法不会更改现有数组，而是返回一个新数组。
+        var arr1 = [10, 20, 30]
+        var arr2 = [40, 50, 60]
+        console.log(arr1.concat(arr2)); //[10, 20, 30, 40, 50, 60]
+        console.log(arr1); //[10, 20, 30]
+
+
+
+        //every（）方法测试数组中的所有元素是否都通过了由提供的函数实现的测试。
+        //函数返回值布尔类型，函数作为参数使用，函数中有三个参数，第一个参数，元素值；第二个参数是索引值；第三个参数是原来的数组（没用）
+        //
+        var arr = [1000, 2000, 300, 4000, 5000];
+        var flag = arr.every(function(a, b) {
+            return a > 200; //数组中每个元素都要大于200，否则返回false
+        });
+        console.log(flag);
+
+        var arra = ["笑眯眯", "哈哈哈哈哈", "人之初"];
+        var flag1 = arra.every(function(ele, index) {
+            return ele.length > 5
+        });
+        console.log(flag1);
+
+
+
+        //filter（）方法创建一个新数组，其中包含所有传递由提供的函数实现的测试的元素。每一个元素都符合条件，组成新的数组
+        var arr3 = [30, 49, 58, 43, 24, 36, 47];
+        arr3.push(67); //追加到数组中
+        arr3.pop();
+        var m = arr3.shift(); //30 删除数组中第一个值
+        var m1 = arr3.unshift(99); //像数组的最前面插入一个元素，返回插入后的长度
+
+        var newArr = arr3.filter(function(ele) {
+            return ele > 40;
+        });
+        console.log(newArr);
+        console.log(m);
+        console.log(m1);
+
+
+        //forEach（）方法为每个数组元素执行一次提供的函数。
+        var array1 = ['a', 'b', 'c'];
+
+        array1.forEach(function(element) {
+            console.log(element);
+        });
+        /*
+          forEach（）被添加到第5版的ECMA-262标准中; 因此，它可能不存在于标准的其他实现中。
+           您可以通过在脚本的开头插入以下代码来解决此问题，允许在本机不支持它的实现中使用forEach（）。
+            该算法正好是ECMA-262第5版中指定的算法，假设Object和TypeError具有其原始值，并且callback.call（）
+            计算为Function.prototype.call（）的原始值。
+        */
+
+
+
+
+        /*join（）方法通过连接数组（或类数组对象）中的所有元素
+        （用逗号或指定的分隔符字符串分隔）来创建并返回一个新字符串。 如果数组只
+        有一个项目，那么将返回该项目而不使用分隔符。*/
+        var elements = ['Fire', 'Wind', 'Rain'];
+        console.log(elements.join("?"));
+        /*
+          map（）方法创建一个新数组，其结果是在调用数组中的每个元素上调用提供的函数。
+        */
+        var arr3 = [30, 49, 58, 43, 24, 36, 47];
+        console.log(arr3.map(x => x + 1));
+
+
+        //reverse（）方法将数组反转到位。 第一个数组元素成为最后一个，最后一个数组元素成为第一个。
+        var array1 = ['one', 'two', 'three'];
+        console.log('array1: ', array1);
+        var reversed = array1.reverse();
+        console.log('reversed: ', reversed);
+        /*sort（）方法对数组中的元素进行排序并返回数组。 默认排序顺序是在将元素转换为字符串，
+        然后比较它们的UTF-16代码单元值序列时构建的。由于它取决于实现，因此无法保证排序的时间和空间复杂性*/
+        var months = ['March', 'Jan', 'Feb', 'Dec'];
+        months.sort();
+        console.log(months);
+
+        //slice（开始的索引，结束的索引）方法将数组的一部分的浅表副本返回到从头到尾选择的新数组对象（不包括结束）。 原始数组不会被修改。
+        var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+        console.log(animals.slice(2));
+        // expected output: Array ["camel", "duck", "elephant"]
+        console.log(animals.slice(2, 4));
+        // expected output: Array ["camel", "duck"]
+        console.log(animals.slice(1, 5));
+        // expected output: Array ["bison", "camel", "duck", "elephant"]
+
+        //splice(开始的位置，要删除的个数，替换元素的值) 方法通过删除或替换现有元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。
+        var months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb');
+        // inserts at 1st index position
+        console.log(months);
+        // expected output: Array ['Jan', 'Feb', 'March', 'April', 'June']
+        months.splice(2, 1, 'May');
+        // replaces 1 element at 4th index
+        console.log(months);
+        // expected output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
