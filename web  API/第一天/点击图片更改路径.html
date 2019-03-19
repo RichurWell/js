@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            height: 300px;
+            <img src="images/3.jpg" alt="" id="im">width: 400px;
+        }
+    </style>
+
+    </script>
+</head>
+
+<body>
+    <a id="ak" href="images/2.jpg">
+        <img src="images/3.jpg" alt="" id="im">
+    </a>
+
+    <script>
+        //点击图片标签，设置图片标签的路径为超链接中大图的路径
+        document.getElementById("im").onclick = function() {
+            this.src = document.getElementById("ak").href;
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

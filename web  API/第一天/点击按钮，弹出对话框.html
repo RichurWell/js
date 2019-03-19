@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- //先有按钮，才能获取，获取后才能注册事件 -->
+
+
+    <input type="button" value="按钮" id="btn">
+
+    <script>
+        // <!--根据id属性值，从文档中获取这个元素-->
+        var btnobj = document.getElementById("btn")
+            // <!--为当前的按钮元素，注册点击事件，添加事件处理函数（匿名函数）-->
+        btnobj.onclick = function() {
+            alert("好帅");
+        }
+    </script>
+</body>
+
+</html>

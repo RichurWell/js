@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //点击操作：---------->事件：就是一件事
+        //按钮被点击，弹出对话框
+        //按钮----事件源
+        //点击-----事件名字
+        //被点击-------》触发了
+        //弹框了--------》响应
+    </script>
+</head>
+
+<body>
+    <!--html代码，点击按钮弹出对话框-->
+    <!--html代码中嵌入了js代码，不方便后期修改和维护-->
+    <!-- <input type="button" value="显示效果" onclick="alert('响应的事件')"> -->
+
+    <!--最终效果应该：把html与js分离-->
+    <script>
+        function f1() {
+            //函数里面可以写很多代码
+            alert("这是一个对话框");
+        }
+    </script>
+    <input type="button" value="显示效果" onclick="f1()" />
+
+    <!--开始分离html和js     html标签中id属性中存储的值是唯一的，id属性就像人的身份证号码一样不能重复，是页面的唯一的标准-->
+    <input type="button" value="开始分离代码" id="btn" />
+    <script>
+        function f2() {
+            alert("我是分离的情况")
+        }
+
+        //从文档中找到id为btn的标识 
+        //document.getElementById("id属性的值")   返回的是元素对象
+        //根据id获取这个标签（元素）
+        var btnobj = document.getElementById("btn");
+        //为按钮注册链接事件
+        btnobj.onclick = f2; //不加括号，加括号直接调用了，而我需要点击的时候调用
+    </script>
+
+
+    <!--上面的两种都不好，下面介绍我们最终的版本，上面都是推论过程-->
+    <input type="button" value="最终版" id="btn1" />
+    <script>
+        //根据id属性的值从整个的文档中查询或者获取这个元素或者标签
+        var btnobj1 = document.getElementById("btn1");
+        btnobj1.onclick = function() {
+            alert("这真实太好了");
+        }
+    </script>
+
+
+
+</body>
+
+</html>

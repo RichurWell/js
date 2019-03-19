@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="修改文本框的值" id="btn" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <input type="text" value="" /><br>
+    <script>
+        //根据id获取文本框的值，为按钮注册点击事件，添加事件处理函数
+        document.getElementById("btn").onclick = function() {
+            //获取所有的文本框
+            var input = document.getElementsByTagName("input");
+            for (var i = 0; i < input.length; i++) {
+                //判断元素是不是按钮
+                if (input[i].type != "button") {
+                    input[i].value = "哈哈哈";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

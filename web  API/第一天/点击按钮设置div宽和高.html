@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="设置样式" id="btn" />
+    <input type="button" value="隐藏" id="btn1" />
+    <input type="button" value="显示" id="btn2" />
+
+    <div id="dv"></div>
+    <script src="common.js">
+    </script>
+    <script>
+        //凡是在css中，这个属性是多个单词的写法，在js代码中，是dom操作的时候，把-干掉，后面的字母，首字母去掉
+        function my$(id) {
+            return document.getElementById(id);
+        }
+        // 点击按钮，修div的宽和高，背景颜色
+        my$("btn").onclick = function() {
+            my$("dv").style.width = "300px";
+            my$("dv").style.height = "200px";
+            my$("dv").style.backgroundColor = "hotpink";
+
+        };
+        //根据 id获取按钮，注册点击事件，添加事件处理函数
+        my$("btn1").onclick = function() {
+            my$("dv").style.display = "none";
+        };
+        my$("btn2").onclick = function() {
+            my$("dv").style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="没怀孕">
+    <input type="button" value="没怀孕">
+    <input type="button" value="没怀孕">
+    <input type="button" value="没怀孕">
+    <input type="button" value="没怀孕">
+    <script>
+        //如何做点排他
+        //获取所有的按钮，，分别注册点击事件
+        var btnob = document.getElementsByTagName("input");
+        //循环遍历所有的按钮
+        for (var i = 0; i < btnob.length; i++) {
+            btnob[i].onclick = function() {
+                //把所有的按钮的value值设置为默认的值：没怀孕
+                for (var j = 0; j < btnob.length; j++) {
+                    btnob[j].value = "没怀孕"
+                }
+                //当前被点击的按钮设置为怀孕了
+                this.value = "怀孕了";
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

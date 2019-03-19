@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script></script>
+</head>
+
+<body>
+    <input type="button" value="显示效果" id="btn" />
+    <p>哈哈，我又变帅了！</p>
+    <p>哈哈，我又变帅了！</p>
+    <p>哈哈，我又变帅了！</p>
+    <p>哈哈，我又变帅了！</p>
+    <p>哈哈，我又变帅了！</p>
+
+    <div id="dv1">
+        <p>我是div里面的p标签</p>
+        <p>我是div里面的p标签</p>
+        <p>我是div里面的p标签</p>
+    </div>
+    <script>
+        //案列，点击按钮设置多个p标签的文字内容
+        //根据id获取按钮，注册点击事件，添加事件处理函数
+        document.getElementById("btn").onclick = function() {
+            var pobjs = document.getElementById("dv1").getElementsByTagName("p"); //更改div标签里面的p
+            /*根据标签名字获取标签，Element.getElementsByTagName() 方法返回一个动态的包含
+            所有指定标签名的元素的HTML集合HTMLCollection。指定的元素的子树会被搜索，不包括元素自己。
+            返回的列表是动态的，这意味着它会随着DOM树的变化自动更新自身。
+            所以，使用相同元素和相同参数时，没有必要多次的调用Element.getElementsByTagName() .*/
+
+            //document.getElementsByTagName("标签的名字");    返回的是一个伪数组
+            // var pobjs = document.getElementsByTagName("p"); //这行代码的返回值是数组
+            console.log(pobjs); //[p, p, p, p, p],不管你是一个还是多个，返回来的是数组，最终都是在数组中存储，
+            for (var i = 0; i < pobjs.length; i++) {
+                //每个p标签，设置文字内容
+                pobjs[i].innerHTML = "我们都是改过的";
+            }
+        }
+    </script>
+</body>
+
+</html>
