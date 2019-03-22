@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="common.js"></script>
+    <input type="button" value="显示效果" id="btn" /> </br>
+    <input type="text" value="你好" name="name1"><br/>
+    <input type="text" value="你好" name="name1"><br/>
+    <input type="text" value="你好" name="name1"><br/>
+    <input type="text" value="你好" name="name2"><br/>
+    <input type="text" value="你好" name="name3"><br/>
+    <input type="text" value="你好" name="name2"><br/>
+    <input type="text" value="你好" name="name1"><br/>
+    <input type="text" value="你好" name="name2"><br/>
+    <input type="text" value="你好" name="name2"><br/>
+    <script>
+        //点击按钮，改变所有name属性值为name1的文本框的value属性值
+        my$("btn").onclick = function() {
+            //通过name属性值获取元素--------
+            var inputs = document.getElementsByName("name1"); //数组
+            //循环数组
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].value = "我好着呢";
+            }
+
+
+        };
+    </script>
+</body>
+
+</html>

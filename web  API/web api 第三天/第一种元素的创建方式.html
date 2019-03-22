@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="创建一个p" id="btn">
+    <script>
+        //document.write("标签代码及内容"); 
+        //注册点击事件
+        document.getElementById("btn").onclick = function() {
+            document.write("<p>这是一个p</p>"); //不好用，占用了原来按钮的位置，body里面就剩p了
+        };
+
+        /*
+         document.write()   创建元素，缺陷，如果页面加载完毕后，此时通过这种方式创建元素， 那么页面中存在的元素及内容全部被干掉
+            
+        */
+    </script>
+</body>
+
+</html>

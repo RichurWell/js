@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            border: 2px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" value="文本框" id="btn">
+    <div id="dv">太神奇</div>
+    <script src="common.js">
+    </script>
+    <script>
+        //点击按钮，设置div的文本框内容 ,应该使用textContent属性，谷歌，火狐，IE8不支持
+        //设置标签的文本内容，应该使用innerText属性，谷歌，火狐，IE8都支持
+        //如果这个属性的浏览器中不支持，那么这个属性的类型是underfined
+
+
+        //写兼容代码  
+
+        //设置标签中间的文本框内容
+
+        //获取标签中间的文本框内容
+
+        //设置任意标签的任意文本内容
+        function setInnerText(element, text) {
+            //判断浏览器是否支持这个属性,是不是underfined，就知道浏览器是否支持
+            if (typeof element.textContent == "undefined") { //不支持
+                element.innerText = text;
+            } else { //支持这个属性
+                element.textContent = text;
+            }
+
+        }
+        //获取任意标签的任意文本内容
+        function getInnerText(element) {
+            //判断浏览器是否支持这个属性,是不是underfined，就知道浏览器 是否支持
+            if (typeof element.textContent == "undefined") { //不支持
+                return element.innerText;
+            } else { //支持这个属性
+                return element.textContent;
+            }
+        }
+
+        //测试
+        my$("btn").onclick = function() {
+            console.log(getInnerText(my$("dv")));
+        }
+        my$("btn").onclick = function() {
+            console.log(setInnerText(my$("dv"), "哈哈哈"));
+        }
+
+
+
+
+
+
+
+        // my$("btn").onclick = function() {
+        //     //设置标签中间的文本内容，应该使用textContent属性
+        //     // my$("dv").textContent = "this is div 标签";
+        //     my$("dv").innerText = "哈哈";
+        //     //获取标签中间的文本内容
+        //     console.log(my$("dv").innerText);
+
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        
+        .hd {
+            height: 45px;
+        }
+        
+        .hd span {
+            display: inline-block;
+            width: 90px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .hd .current {
+            background-color: blueviolet;
+        }
+        
+        .bd li {
+            height: 255px;
+            background-color: blueviolet;
+            display: none;
+        }
+        
+        .bd .current {
+            display: block;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="hd">
+            <span class="current">体育</span>
+            <span>休闲</span>
+            <span>新闻</span>
+            <span>综合</span>
+        </div>
+        <div class="bd">
+            <ul>
+                <li class="current">我是体育模块</li>
+                <li>我是娱乐模块</li>
+                <li>我是新闻模块</li>
+                <li>我是综合模块</li>
+            </ul>
+
+        </div>
+    </div>
+    <script src="common.js">
+    </script>
+    <script>
+        //先获取最外面的div
+        var box = my$("box");
+        //获取里面的div，第一个div
+        var hd = box.getElementsByTagName("div")[0];
+        //第二个
+        var bd = box.getElementsByTagName("div")[1];
+        //获取所有的span标签
+        var spans = hd.getElementsByTagName("span");
+        //先获取所有的li模块
+        var lis = bd.getElementsByTagName("li");
+        //循环遍历的方式，添加点击事件
+        for (var i = 0; i < spans.length; i++) {
+            //在点击之前就把索引保存在span标签 
+            spans[i].setAttribute("index", i);
+            spans[i].onclick = function() {
+                //所有的span的类样式全部一次
+                for (var j = 0; j < spans.length; j++) {
+                    spans[j].removeAttribute("class");
+                }
+                for (var a = 0; a < lis.length; a++) {
+                    lis[a].removeAttribute("class")
+                }
+                //当前被点击的span的应用类样式
+                this.className = "current";
+
+                //span被点击的时候获取存储的索引值
+                //alert(this.getAttribute("index"));
+                var num = this.getAttribute("index");
+
+                //当前被点击的span对应的li标签显示
+                lis[num].className = "current";
+            }
+        }
+    </script>
+</body>
+
+</html>

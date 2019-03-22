@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="common.js"></script>
+    <ul id="uu">
+        <li>班主任的成绩</li>
+        <li>小苏的成绩</li>
+        <li>小杰老师</li>
+        <li>芳芳</li>
+        <li>瞧瞧</li>
+    </ul>
+    <script>
+        /*
+                   总结：设置自定义属性setAttribute（"属性的名字"，“属性的值”）;
+                         获取自定义属性的值getAttribute（"属性的名字"）
+                      
+                   
+                   */
+
+
+
+        //获取所有的li标签，然后为每个标签中动态的添加自定义属性和值
+        //点击的时候获取该标签的自定义属性的值
+
+        //根据id获取ul标签，并且获取该标签中所有的li
+        var list = my$("uu").getElementsByTagName("li");
+        for (var i = 0; i < list.length; i++) {
+            //为每个li添加自定义属性
+            //  list[i].score = (i + 1) * 10;  //此方式，自定义属性在dom对象上，不在标签中
+            list[i].setAttribute("score", (i + 1) * 10);
+            //点击每个标签，显示自定义的标签的值
+            list[i].onclick = function() {
+                alert(this.getAttribute("score"));
+            }
+        }
+    </script>
+    <script>
+        // //html标签中有没有什么自带的属性可以存成绩-----没有
+        // //本身html标签没有这个属性，自己（程序员）添加的-----自定义属性----为了存储一些数据
+        // //获取所有的li标签
+        // var list = document.getElementsByTagName("li");
+        // for (var i = 0; i < list.length; i++) {
+        //     list[i].onclick = function() {
+        //         // alert(this.score);//this是DOM对象，在DOM树中是没有score属性，所以this不能调用标签属性
+
+        //         //在html标签中，添加的自定义属性，如果想要获取这个属性的值，需要使用getAttribute("自定义属性的名字")才能获取这个属性的值
+        //         alert(this.getAttribute("score"));
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

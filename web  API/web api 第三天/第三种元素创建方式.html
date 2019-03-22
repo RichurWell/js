@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="创建p" id="btn">
+    <div id="dv"></div>
+    <script src="common.js"></script>
+    <script>
+        /*
+                                                                   第三种方式创建元素：
+                                                                     //创建元素（生孩子）
+                                                                     document.createElement("标签名字");对象
+                                                                     //把元素追加到父级元素中（上户口）
+                                                                  //点击按钮在div中创建一个p
+                                                                 
+                                                                 */
+        document.getElementById("btn").onclick = function() {
+            //创建元素
+            var pObj = document.createElement("p")
+                //追加到父级div
+            setInnerText(pObj, "这是一个p");
+            document.getElementById("dv").appendChild(pObj); //追加
+
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <script src="common.js"></script>
+    <script>
+        //为任意元素，绑定任意事件   任意的元素，事件类型，事件处理桉树
+        function addEventListener(element, type, fn) {
+            //判断浏览器是否支持这个方法,判断这个对象
+            if (element.addEventListener) {
+                //支持
+                element.addEventListener(type, fn, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, fn);
+            } else {
+                element["on" + type] = fn;
+            }
+        };
+        addEventListener(my$("btn"), "click", function() {
+            console.log("dedwke");
+        });
+        addEventListener(my$("btn"), "click", function() {
+            console.log("dedwke1");
+        });
+        addEventListener(my$("btn"), "click", function() {
+            console.log("dedwke3");
+        });
+    </script>
+</body>
+
+</html>

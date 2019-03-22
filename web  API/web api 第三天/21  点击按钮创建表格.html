@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="创建表格" id="btn">
+    <div id="dv"></div>
+    <script src="common.js"></script>
+    <script>
+        var arr = [{
+            name: "百度",
+            href: "http://www.baidu.com"
+        }, {
+            name: "谷歌",
+            href: "http://www.google.com"
+        }, {
+            name: "土豆",
+            href: "http://www.tudou.com"
+        }, {
+            name: "优酷",
+            href: "http://www.youku.com"
+        }, {
+            name: "豆瓣",
+            href: "http://www.douban.com"
+        }]
+
+        //创建表格  table   thead  tbody   tfoot
+        //点击按钮，注册添加事件
+        my$("btn").onclick = function() {
+            //创建table，加入到div
+            var tableObj = document.createElement("table");
+            tableObj.border = "1";
+            tableObj.cellPadding = 0;
+            tableObj.cellSpacing = 0;
+            my$("dv").appendChild(tableObj);
+            //创建行，把行添加到table
+            for (var i = 0; i < arr.length; i++) {
+                //循环一次，一行两列
+                var dt = arr[i]; //每个对象
+                var trObj = document.createElement("tr");
+                tableObj.appendChild(trObj);
+                //创建第一列
+                var td1 = document.createElement("td");
+                td1.innerText = dt.name;
+                //加入到行
+                trObj.appendChild(td1);
+                //创建第二列
+                var td2 = document.createElement("td");
+                td2.innerHTML = "<a href=" + dt.href + ">" + dt.name + "</a>"
+                    //加入到行
+                trObj.appendChild(td2);
+            }
+        };
+    </script>
+</body>
+
+</html>

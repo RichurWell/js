@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="显示效果" id="btn">
+
+    <div id="dv"></div>
+    <script src="common.js"></script>
+    <script>
+        //有则删除，无则删除
+
+
+        var i = 0;
+        //只创建一个元素
+        my$("btn").onclick = function() {
+            i++;
+            //判断div有没有按钮
+            if (my$("btn2")) {
+                //为true，有，删除
+                my$("dv").removeChile(my$("btn2"));
+            }
+            var obj = document.createElement("input");
+            obj.type = "button";
+            obj.value = "按钮" + i;
+            obj.id = "btn2"
+            my$("dv").appendChild(obj);
+        }
+    </script>
+</body>
+
+</html>

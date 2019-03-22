@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <style [src]="common.js"></style>
+    <script>
+        //点击按钮，弹出对话框
+        //根据选择器的方式获取元素，id选择器，类选择器，。。。。。。。
+        var btnObj = document.querySelector("#btn");
+        btnObj.onclick = function() {
+            alert("哈哈，我又被删了");
+        }
+    </script>
+
+
+</body>
+
+</html>

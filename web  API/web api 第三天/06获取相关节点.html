@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv">
+        <span>这是div的第一个span标签</span>
+        <p>这是div的第二个元素，第一个p标签</p>
+        <ul id="uu">
+            <li id="i">乔峰</li>
+            <li>录入</li>
+            <li id="three">小马</li>
+            <li>哈罗</li>
+            <li>神经</li>嘎嘎
+        </ul>
+    </div>
+    <script src="common.js"></script>
+
+    <script>
+        /*
+                       总结：凡是获取节点的代码，在谷歌和火狐得到的都是相关的节点，凡是获取元素的代码，在 谷歌个火狐得到的都是相关的元素
+                             从子节点和兄弟节点开始，凡是获取节点的代码，在IE8获取的都是元素。凡是获取元素的代码，在IE8中都不支持
+
+                    
+                    */
+
+
+        //12行代码：都是获取节点和元素的
+        var ulObj = my$("uu");
+        //1、父级节点
+        console.log(ulObj.parentNode);
+        //2、父级元素
+        console.log(ulObj.parentElement);
+        //3、子节点
+        console.log(ulObj.childNodes); //节点包括文本
+        //4、子元素
+        console.log(ulObj.children); //没有文本
+
+        //-------------------------下面的凡是节点在IE8里面都是元素，元素的在IE8里面不支持
+        //第一个子节点
+        console.log(ulObj.firstChild); //-----IE8第一个子元素
+        //最后一个子元素
+        console.log(ulObj.firstElementChild); //--------IE8不支持
+        //最后一个子节点
+        console.log(ulObj.lastChild);
+        //最后一个子元素
+        console.log(ulObj.lastElementChild);
+        //某个节点的前一个兄弟节点
+        console.log(my$("three").previousSibling);
+        //某个节点的前一个兄弟元素
+        console.log(my$("three").nextElementSibling);
+        // 某个节点的后一个兄弟节点
+        console.log(my$("three").nextSibling);
+        //某个节点的后一个兄弟元素
+        var dvobj = my$("dv");
+    </script>
+</body>
+
+</html>

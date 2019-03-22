@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="创建列表" id="btn">
+    <div id="dv"></div>
+
+    <script>
+        //注册点击事件
+        // document.getElementById("btn").onclick = function() {
+        //     //
+        //     document.getElementById("dv").innerHTML = "<ul><li>你好</li><li>真的</li><li>是你吗</li><li>是我o</li></ul>"
+        // }
+
+
+        var names = ["刘微", "刘邦", "城市", "小明", "哈哈", "母鸡"];
+        document.getElementById("btn").onclick = function() {
+            var str = "<ul style='list-style-type:none ;cursor:pointer'>";
+            //循环作用：根据循环，创建对应对数的li
+            for (var i = 0; i < names.length; i++) {
+                str += "<li>" + names[i] + "</li>";
+            }
+            str += "</ul>"
+            document.getElementById("dv").innerHTML = str;
+
+            //代码执行到这里，li已经有了
+            //获取所有的li，添加鼠标进入事件，离开事件
+            var list = document.getElementsByTagName("li");
+            for (var i = 0; i < list.length; i++) {
+                //鼠标进入事件
+                list[i].onmouseover = function() {
+                    this.style.backgroundColor = "yellow";
+                };
+                //鼠标离开事件
+                list[i].onmouseout = function() {
+                    this.onmouseout = function() {
+                        this.style.backgroundColor = "";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

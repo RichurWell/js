@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="创建一个p" id="btn">
+    <div id="dv"></div>
+    <script>
+        //点击按钮，在div中创建标签
+        document.getElementById("btn").onclick = function() {
+            //第二种方式创建元素
+            document.getElementById("dv").innerHTML = "<p>哈哈哈，我是刘微</p>"
+        }
+    </script>
+</body>
+
+</html>

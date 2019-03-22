@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv">
+        <span>这是div的第一个span标签</span>
+        <p>这是div的第二个元素，第一个p标签</p>
+        <ul id="uu">
+            <li id="i">乔峰</li>
+            <li>录入</li>
+            <li>小马</li>
+            <li>哈罗</li>
+            <li>神经</li>
+        </ul>
+    </div>
+    <script src="common.js"></script>
+    <script>
+        /*
+                                           节点的属性：（这个属性，可以使用标签（元素）.出来，  可以使用属性节点.出来   可以使用文本节点.出来）
+                                           nodeType   1---标签，2---属性  3---文本
+                                           nodeName  节点的名字：标签节点-----大写的标签名字，属性节点----小写的属性名字 ，文本节点 ---#text
+                                          nodeValue  节点的值：如果是标签节点----null  ，属性节点----属性值    文本节点----文本内容
+                                            */
+    </script>
+    <script>
+        var ulobj = my$("uu");
+        //ul标签的父亲节点（只有标签才能作为父节点）
+        console.log(ulobj.parentNode); //div
+        console.log(ulobj.parentNode.parentNode); //body
+
+        //ul标签的父级元素
+        console.log(ulobj.parentElement);
+
+        console.log(ulobj.parentNode.nodeType); //1---标签------1
+        console.log(ulobj.parentNode.nodeName); //1---标签------大写的标签名字DIV
+        console.log(ulobj.parentNode.nodeValue); //1---标签----null
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("images/2.jpg");
+        }
+        
+        div {
+            height: 900px;
+            width: 1000px;
+            margin: 0px auto;
+        }
+        
+        img {
+            margin-left: 100px;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/abcd.jpg" alt="">
+    </div>
+    <script>
+        var imjobi = document.getElementById("mask").children; //获取所有的子元素
+        for (var i = 0; i < imjobi.length; i++) {
+            imjobi[i].onclick = function() {
+                document.body.style.backgroundImage = "url(" + this.src + ")";
+            }
+        }
+    </script>
+</body>
+
+</html>

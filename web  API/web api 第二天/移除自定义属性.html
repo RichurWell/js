@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        .cls {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="移除自定义属性" id="btn">
+    <div id="dv" score="10" class="cls" </div>
+        <script src="common.js"></script>
+        <script>
+            //点击按钮，移除自定义的属性removeAttribute("属性的名字")
+            my$("btn").onclick = function() {
+                my$("dv").removeAttribute("score");
+                //移除元素的类样式(不干净，值没了，属性还在)
+                // my$("dv").className = "";
+                //也可以移除元素的类样式
+                my$("dv").removeAttribute("class");
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="uu">
+
+
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+    </ul>
+    <script src="common.js"></script>
+    <script>
+        //第一个节点和第一个元素获取的代码，在IE8中可能不支持
+        //获取任意一个元素的父级元素和第一个子级元素
+        // element.firstChild-------------谷歌和火狐的获取的是第一个子节点
+        // element.firstChild-------------IE8获取的是第一个子元素
+        // element.firstElementChild --------谷歌和火狐的获取的是第一个子元素，IE8不支持
+
+        //获取任意一个父级元素的第一个子级元素
+        function getFirstElementChild(element) {
+            if (typeof element.firstElementChild) { //排查掉underfined情形，我要的是元素
+                //浏览器支持,放在小括号结果是false
+                //不是underfined执行下面语句
+                return element.firstElementChild;
+            } else {
+                //
+                var node = element.firstchild; //第一个子节点
+                while (node && node.nodeType != 1) {
+                    //变量有意义，节点存在,且不是标签
+                    node = node.nextSibling;
+                }
+                return node;
+            }
+        }
+        //获取获取任意一个父级元素的最后一个子级元素,element父级元素，返回值，最后一个子元素
+        function getLastElementChild(element) {
+            if (typeof element.lastElementChild) { //排查掉underfined情形，我要的是元素
+                //浏览器支持,放在小括号结果是false
+                //不是underfined执行下面语句
+                return element.lastElementChild;
+            } else {
+                //
+                var node = element.lastchild; //第一个子节点
+                while (node && node.nodeType != 1) {
+                    //变量有意义，节点存在,且不是标签
+                    node = node.previousSibling;
+                }
+                return node;
+            }
+
+        }
+
+        //测试
+        console.log(getFirstElementChild(my$("uu")));
+        console.log(getLastElementChild(my$("uu")));
+        console.log(getFirstElementChild(my$("uu")).innerText);
+        console.log(getLastElementChild(my$("uu")).innerText);
+
+
+
+        //最后一个节点和最后 一个元素获取的代码，在IE8中可能不支持
+        //前一个节点和前一个元素获取的代码，在IE8中可能不支持
+        //后一个节点和后一个元素获取的代码，在IE8中可能不支持
+    </script>
+</body>
+
+</html>

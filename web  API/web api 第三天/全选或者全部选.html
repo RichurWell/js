@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {}
+        
+        div {
+            height: 500px;
+            width: 500px;
+            margin: 0px auto;
+        }
+        
+        table {
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+        
+        th {
+            border-bottom: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll">
+                    </th>
+                    <th>菜名</th>
+                    <th>饭店</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" name="" id="">
+                    </td>
+                    <td>红烧肉</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="" id="">
+                    </td>
+                    <td>西红柿炒鸡蛋</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="" id="">
+                    </td>
+                    <td>油炸榴莲</td>
+                    <td>田老师</td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+    </div>
+    <script src="common.js"></script>
+    <script>
+        //获取全选的复选框
+        var ckAll = my$("j_cbAll");
+        //获取tbody中所有的小复选框
+        var cks = my$("j_tb").getElementsByTagName("input");
+        //点击全选的这个复选框，获取它的当前状态，设置tbody中所有的复选框的状态
+        ckAll.onclick = function() {
+            //  console.log(this.checked);
+            for (var i = 0; i < cks.length; i++) {
+                cks[i].checked = this.checked; //点击复选框按钮，让下面的小的复选框与全选复选框按钮状态一致
+            }
+        };
+
+        //获取tbody中所有的复选框,分别注册点击事件
+        for (var i = 0; i < cks.length; i++) { //找到每个复选框，注册事件
+            cks[i].onclick = function() {
+                var flag = true; //默认所有复选框都被选中
+                for (var j = 0; j < cks.length; j++) { //遍历
+                    //判断是否被选中
+                    if (!cks[j].checked) {
+                        //没选中就进来了
+                        flag = false; //只要有一个没选中，flag=false
+                        break;
+                    }
+                }
+                //如果整个for循环都结束了，if（）内一次没执行，就代表都选中
+                ckAll.checked = flag;
+            };
+        }
+    </script>
+</body>
+
+</html>

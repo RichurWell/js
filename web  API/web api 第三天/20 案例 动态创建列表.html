@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="button" value="创建p" id="btn">
+    <div id="dv"></div>
+    <script src="common.js"></script>
+    <script>
+        //动态创建列表
+        var Kungfu = ["打拳", "葵花宝典", "吸星大法", "如来神掌", "九阴真经", "玉女心经", "极乐神功", "降龙十八掌", "辟邪剑谱"];
+        //点击按钮创建列表,把列表添加到div
+        my$("btn").onclick = function() {
+            //先创建ul，然后把ul立刻加入到父级元素div中
+            var ulObj = document.createElement("ul");
+            my$("dv").appendChild(ulObj);
+            //动态创建li，加入到ul
+            for (var i = 0; i < Kungfu.length; i++) {
+                var liObj = document.createElement("li");
+                //设置li中间的文字
+                liObj.innerHTML = Kungfu[i];
+                ulObj.appendChild(liObj); //追加到父亲
+                //为li添加鼠标进入设置  mouseoverHandle事件,这里不用匿名函数，是因为循环方式添加事件
+                liObj.onmouseover = mouseoverHandle;
+                //为li添加鼠标离开事件mouseoutHandle事件
+                liObj.onmouseout = mouseoutHandle;
+            }
+        };
+        //注：循环事件推荐用命名函数，非循环事件推荐匿名函数
+        //   此位置，按钮的点击事件
+        function mouseoverHandle() {
+            this.style.backgroundColor = "red";
+        }
+
+        function mouseoutHandle() {
+            this.style.backgroundColor = "";
+        }
+    </script>
+</body>
+
+</html>

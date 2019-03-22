@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 450px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="变色" id="btn">
+    <div id="dv">
+        <span>这是span</span>
+        <p>这是p</p>
+        <span>这是span</span>
+        <p>这是p</p>
+        <span>这是span</span>
+        <p>这是p</p>
+        <span>这是span</span>
+        <a href="http://www.baidu.com"></a>
+
+    </div>
+    <script src="common.js"></script>
+    <script>
+        //点击按钮，设置p变色   ----------节点的方式做
+        var dvobj = my$("dv");
+        //获取所有子节点
+        var nodes = dvobj.childNodes;
+        //循环遍历所有的子节点
+        for (var i = 0; i < nodes.length; i++) {
+            //判断是不是标签类型，节点的标签名字是不是p，标签名字都是大写
+            //（nodeType   1---标签，2---属性  3---文本  nodeName  
+            //节点的名字：标签节点-----大写的标签名字，属性节点----小写的属性名字 ，文本节点 ---#text）
+
+            if (nodes[i].nodeType == 1 && nodes[i].nodeName == "P") {
+                nodes[i].style.backgroundColor = "red";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
