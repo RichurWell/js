@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dv1 {
+            height: 500px;
+            width: 500px;
+            background-color: antiquewhite;
+        }
+        
+        #dv2 {
+            height: 400px;
+            width: 400px;
+            background-color: blue;
+        }
+        
+        #dv3 {
+            height: 300px;
+            width: 300px;
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        //多个元素嵌套,多个元素嵌套，有层次关系,这些标签都注册了相同的事件,如果里面的元素的事件触发了，外面的元素的该事件自动的触发了
+        my$("dv1").onclick = function() {
+            console.log(this.id);
+        }
+        my$("dv2").onclick = function() {
+            console.log(this.id);
+        }
+        my$("dv3").onclick = function() {
+            console.log(this.id);
+        }
+        document.body.onclick = function() {
+            console.log("颤抖吧")
+        }
+    </script>
+</body>
+
+</html>

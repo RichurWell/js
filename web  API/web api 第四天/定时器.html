@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="停止" id="btn">
+    <script src="common.js"></script>
+    <script>
+        //BOM中有两个定时器
+
+        //参数1：函数
+        //参数2  时间
+        var timeId = window.setInterval(function() {
+            alert("哈哈"); //alert有个断言的作用，就是我不点确定
+        }, 1000);
+
+
+        document.getElementById("btn").onclick = function() {
+            //清理定时器
+            //参数：要清理的定时器的id的值
+            window.clearInterval(timeId);
+        };
+    </script>
+</body>
+
+</html>

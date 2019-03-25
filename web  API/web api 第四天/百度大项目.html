@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" id="txt" value="">
+        <input type="button" value="搜索" id="btn">
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        var keywords = ["小明", "小白", "丽丽", "大姐", "小王", "小王在吃饭", "小王在哪儿呢",
+            "小王和丽丽在一起吃饭", "丽丽坐在小明前面", "小红在哪儿，小白在吃饭", "小白在哪儿吃饭呢",
+            "哪儿有人吃饭"
+
+        ];
+        //获取文本框注册键盘抬起事件
+        my$("txt").onkeyup = function() {
+            //我每次键盘抬起的时候，我都判断页面有没有div
+            if (my$("dv")) {
+                //删除一次
+                my$("box").removeChild(my$("dv"));
+
+            }
+            //获取文本框输入的内容 
+            var text = this.value;
+            //临时数组，将匹配的放入新的数组
+            var tempArr = []; //临时数组，空数组，存放对应上的数据
+            //把文本框输入的内容和数组中的每个数据对比
+            for (var i = 0; i < keywords.length; i++) {
+                //是否是最开始出现的，从字符串里面找用户输入的字符串
+                if (keywords[i].indexOf(text) == 0) { //每个字符串与我输入的进行匹配，最开始匹配上的放入临时数组，索引为0表示最开始就匹配上的
+                    //能够匹配上
+                    tempArr.push(keywords[i]); //追加
+                }
+            }
+            //如果文本框是空的，临时数组也是空的，不需要创建div
+            if (this.value.length == 0 || tempArr.length == 0) {
+                //如果页面有这个div，删除这个div
+                if (my$("dv")) {
+                    my$("box").removeChild(my$("dv"));
+                }
+                //====后面的代码不执行
+                return;
+            }
+
+            //遍历临时数组,创建div，把div加入到id为box的div中,我们只需要一个div
+            var dvobj = document.createElement("div");
+            my$("box").appendChild(dvobj);
+            dvobj.id = "dv";
+            dvobj.style.width = "350px";
+            // dvobj.style.height = "100px";
+            dvobj.style.border = "1px solid green";
+
+            //循环遍历临时数组，创建对应的p标签
+            for (var i = 0; i < tempArr.length; i++) {
+                //创建p
+                var pobj = document.createElement("p");
+                pobj.style.margin = 0;
+                pobj.style.padding = 0;
+                pobj.style.cursor = "pointer"
+                pobj.style.marginTop = "5px";
+                pobj.style.marginLeft = "5px";
+                dvobj.appendChild(pobj);
+                setInnerText(pobj, tempArr[i]);
+                //鼠标进入
+                pobj.onmousemove = function() {
+                    this.style.backgroundColor = "yellow";
+
+                };
+                //鼠标离开
+                pobj.onmouseout = function() {
+                    this.style.backgroundColor = "";
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

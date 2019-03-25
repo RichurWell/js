@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dv1 {
+            height: 500px;
+            width: 500px;
+            background-color: antiquewhite;
+        }
+        
+        #dv2 {
+            height: 400px;
+            width: 400px;
+            background-color: blue;
+        }
+        
+        #dv3 {
+            height: 300px;
+            width: 300px;
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        //如何阻止事件冒泡window.event.cancelBubble = true;  IE特有的，谷歌支持，火狐不支持
+        // e.stopPropagation();    //谷歌和火狐支持
+        my$("dv1").onclick = function() {
+            console.log(this.id);
+        }
+        my$("dv2").onclick = function() {
+            console.log(this.id);
+            window.event.cancelBubble = true;
+        }
+        my$("dv3").onclick = function(e) {
+                console.log(this.id);
+                e.stopPropagation(); //IE8不支持，谷歌火狐支持
+            }
+            //事件处理参数对象，事件触发中发生的
+            // document.body.onclick = function(e) {
+            //     console.log("颤抖吧")
+            //     window.event.cancelBubble = true;
+
+        // }
+    </script>
+</body>
+
+</html>

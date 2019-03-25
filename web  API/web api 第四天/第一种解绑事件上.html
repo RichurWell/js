@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <input type="button" value="干掉第一个按钮事件按钮" id="btn2">
+
+    <script src="common.js"></script>
+    <script>
+        /*
+                   第一种解绑事件
+
+                                */
+
+        //绑定事件：第一种（对象.on事件名字=事件处理函数）
+        my$("btn").onclick = function() {
+                console.log("绑定事件")
+            }
+            //解绑事件：第一种（对象.on事件名字=事件处理函数）
+        my$("btn2").onclick = function() {
+                //解绑事件:第一种方式：
+                my$("btn").onclick = null;
+            }
+            /*
+               注：用什么方式绑定事件，就应该用什么方式解绑事件
+                  1、解绑事件
+                  对象.on事件名字=事件处理函数-------》绑定事件
+                  对象.on事件名字=null
+
+
+            */
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /*
+                                                        javaScript分为三个部分：
+                                                        1、ECMASCript标准----基本语法
+                                                        2、DOM---document object model
+                                                        3、BOM---Browser Object Modual  浏览器对象模型
+                                                        浏览器中有个顶级对象:windows   ----皇上
+                                                        页面中顶级对象：document      -----总管太监
+                                                        页面中所有内容都是属于浏览器的，页面中所有内容也都属于windows的
+                                                            
+
+
+                                                         */
+        var num = 10;
+        console.log(window.num);
+
+        function f1() {
+            console.log("xiao")
+        }
+        window.f1();
+        //   window.write("hahahah");
+        window.document.write("hahah")
+    </script>
+</body>
+
+</html>

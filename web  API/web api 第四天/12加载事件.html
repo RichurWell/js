@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //页面加载没有完毕不能获取按钮
+
+
+        //onload ------------解决顺序问题，页面加载完触发
+        //只要页面加载完毕，这个事件就会触发----页面中所有的内容，标签吗，属性，文本，包括外部引入的js文件
+        window.onload = function() { //window可以省略
+
+            document.getElementById("btn").onclick = function() {
+                alert("您好");
+            }
+        };
+        //扩展----页面关闭后之前触发-----谷歌无效
+        window.onunload = function() {
+                alert("onunload");
+            }
+            //扩展---页面关闭之前---------谷歌无效
+        window.onbeforeunload = function() {
+            alert("onbeforeunload");
+        }
+    </script>
+    <!-- 放在这里有好处，不需要等待它先加载 -->
+    <script src="common.js"></script>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+</body>
+
+</html>

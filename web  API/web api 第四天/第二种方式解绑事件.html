@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <input type="button" value="干掉第一个按钮事件按钮" id="btn2">
+
+    <script src="common.js"></script>
+    <script>
+        // /*
+        //    第二种解绑事件
+
+        //                 */
+
+        /*
+        //        注：用什么方式绑定事件，就应该用什么方式解绑事件
+        //           第二种方式：解绑事件
+                     对象.addEventListener("没有on的事件类型",命名函数，false)；-----------绑定事件
+                     对象.removerEventListener("没有on的事件类型",函数名字，false)
+
+             */
+        function f1() {
+            console.log("第一个点击事件")
+        }
+
+        function f2() {
+            console.log("第二个点击事件")
+        }
+        my$("btn").addEventListener("click", f1, false)
+
+        my$("btn").addEventListener("click", f2, false)
+            //点击第二个按钮，把第一个按钮中第一个点击事件干掉
+        my$("btn2").onclick = function() {
+            //解绑事件，需要在绑定事件的时候用命名函数
+            my$("btn").removeEventListener("click", f1, false);
+        };
+    </script>
+
+</body>
+
+</html>
