@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            position: absolute;
+            left: 100px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv">
+
+
+    </div>
+    <script src="common.js"></script>
+    <script>
+        /*
+                                                                                   知识点：获取元素计算后的样式属性值：
+                                                                                   怎么获取？ 
+                                                                                    */
+        // my$("btn").onclick = function() {
+        //     //获取元素距离左边位置
+        //     //  console.log(my$("dv").offsetLeft);  //offsetLeft获取的值有问题的，假如不脱标结果就是0，不准啊
+
+        //     //谷歌支持，火狐支持
+        //     console.log(window.getComputedStyle(my$("dv"), null)); //返回包含所有css的属性的对象
+        //     console.log(window.getComputedStyle(my$("dv"), null).left); //这种方式获取准确
+        //     console.log(window.getComputedStyle(my$("dv"), null)["left"]); //点到方式都可以换成中括号
+
+        //     //IE支持
+        //     console.log(my$("dv").currentStyle.left);
+        // }
+
+
+
+        // //兼容代码，获取任意一个元素的任意一个样式的属性的值
+        // function getStyle(element,attr){
+        //     //判断浏览器是否支持这个方法
+        //     if(window.getComputedStyl){
+        //         //判断浏览器是否支持getComputedStyl，支持则
+        //         return window.getComputedStyle(element,null)[attr];
+        //     }else{
+        //         return element.currentStyle[attr];
+        //     }
+        // }
+        //换一种好写的方法
+        function getStyle(element, attr) {
+            //三元表达式
+            return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr]
+        }
+        //测试
+        my$("btn").onclick = function() {
+            console.log(getStyle(my$("dv"), "left")) //100px
+            console.log(getStyle(my$("dv"), "top"))
+        }
+    </script>
+</body>
+
+</html>

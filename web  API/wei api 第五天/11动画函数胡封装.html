@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //设置任意一个函数移动到指定的位置
+        function animate(element, target) {
+
+            //为了保证，每次只要一个定时器
+            clearInterval(element.timeId);
+            //定时器的id值存储到对象的一个属性中，js是动态语言，.点了，就有了该属性
+            element.timeId = setInterval(function() {
+                //获取当前位置
+                var current = element.offsetLeft; //数字类型
+                //每次移动的距离
+                var step = 10;
+                //判断当前的位置小于目标还是大于，小于走整数，大于走负数
+                step = current < target ? step : -step;
+                //当前移动到位置
+                current += step;
+
+                if (Math.abs(current - target) > Math.abs(step)) {
+                    element.style.left = current + "px";
+                } else {
+                    //清理定时器
+                    clearInterval(element.timeId);
+                    //直接到达目标
+                    element.style.left = target + "px";
+                }
+
+            }, 20)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

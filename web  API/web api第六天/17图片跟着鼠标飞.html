@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        img {
+            position: absolute
+        }
+    </style>
+</head>
+
+<body>
+    <script src="common.js"></script>
+    <img src="images/tianshi.gif" id="im">
+    <script>
+        //文档的鼠标移动事件
+        //对象，事件，事件处理函数，事件触发，函数的代码就会执行
+        /*通过arguments.length 可以得出事件处理函数中，实际上是有一个参数，这个参数，和事件有关系，而且是一个对象，这个参数
+          和事件有关系，而且是一个对象，这个参数称为事件参数对象
+
+        */
+        // document.onmouseover = function(evt) { 
+        //     //  console.log(arguments[0]);//证明这个函数只有一个参数，我们就可以给该方法 随便传个参数
+        //     console.log(evt);
+        // }
+
+
+        /*
+           谷歌火狐都有这个事件参数对象，IE8没有
+           事件参数对象e------在IE8中用window.event来代替
+        */
+        document.onmouseover = function(e) {
+            // document.title = e.clientX + "====" + e.clientY;
+            e = window.event || e
+                //可视区域的横坐标
+                //可视区域的纵坐标
+                //pageX，pageY谷歌和火狐可用，IE8可用
+            my$("im").style.left = e.pageX + "px";
+            my$("im").style.top = e.pageY + "px";
+        }
+    </script>
+</body>
+
+</html>

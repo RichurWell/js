@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            width: 200px;
+            height: 30px;
+            background-color: palevioletred;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="变宽" id="btn">
+    <div id="dv"></div>
+    <script src="common.js"></script>
+    <script>
+        my$("btn").onclick = function() {
+            //点击完，变宽按钮，触发定时器操作
+            var width = 200;
+            var timeid = setInterval(function() {
+                //变宽
+                width++;
+                if (width > 1000) {
+                    clearInterval(timeid);
+                }
+                my$("dv").style.width = width + "px";
+            }, 10);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            width: 300px;
+            height: 200px;
+            border: 2px solid red;
+            overflow: auto;
+        }
+        
+        input {
+            left: 330px;
+            position: absolute;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv">
+        我是谁啊我在哪 我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪 我是谁啊我在哪我是谁啊我在 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪 我是谁啊我在哪我是谁啊我在 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪 我是谁啊我在哪我是谁啊我在 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪
+        我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪我是谁啊我在哪 我是谁啊我在哪我是谁啊我在 我是谁啊我在哪 我是谁啊我在哪 我是谁啊我在哪
+
+    </div>
+    <input type="button" value="显示效果" id="btn">
+    <script src="common.js"></script>
+    <script>
+        // my$("btn").onclick = function() {
+        //     console.log(my$("dv").offsetWidth)//304
+        // }
+
+
+        /*
+          元素的样式属性是无法通过：对象.style.属性获取（样式在style属性中）
+            offset系列：offsetLeft   ：距离左位置的值
+                        offsetTop    ：距离上面位置的值
+                        offsetWidth  ：元素的宽(有边框)
+                        offsetHeight  ：元素的高（有边框）
+            scroll系列：
+                      scrollWidth：元素内容实际的高（没有边框），没有内容，就是就是元素的宽
+                      scrollHeight：元素内容实际的高（没有边框）没有内容，就是就是元素的高
+         
+         
+         
+         */
+        // my$("btn").onclick = function() {
+        //     console.log(my$("dv").offsetWidth) //304
+        //     console.log(my$("dv").offsetHeight) //204 ，与内容无关
+        //     console.log(my$("dv").scrollWidth) //300
+        //     console.log(my$("dv").scrollHeight) //357
+        //     console.log(my$("dv").scrollTop) //向上卷曲出去的距离
+        //     console.log(my$("dv").scrollLeft) //向左卷曲出去的距离
+        // }
+        my$("dv").onscroll = function() {
+            console.log(this.scrollTop);
+        };
+    </script>
+</body>
+
+</html>

@@ -27,7 +27,6 @@
             if (my$("dv")) {
                 //删除一次
                 my$("box").removeChild(my$("dv"));
-
             }
             //获取文本框输入的内容 
             var text = this.value;
@@ -50,7 +49,6 @@
                 //====后面的代码不执行
                 return;
             }
-
             //遍历临时数组,创建div，把div加入到id为box的div中,我们只需要一个div
             var dvobj = document.createElement("div");
             my$("box").appendChild(dvobj);
@@ -58,7 +56,6 @@
             dvobj.style.width = "350px";
             // dvobj.style.height = "100px";
             dvobj.style.border = "1px solid green";
-
             //循环遍历临时数组，创建对应的p标签
             for (var i = 0; i < tempArr.length; i++) {
                 //创建p

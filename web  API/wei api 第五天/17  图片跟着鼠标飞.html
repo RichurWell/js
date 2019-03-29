@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/7.jpg" alt="" id="im">
+    <script src="common.js"></script>
+    <script>
+        //为document注册移动事件
+        document.onmousemove = function(e) {
+            //得到当前鼠标的位置，距离上面，下面
+
+
+            my$("im").style.left = e.clientX + "px";
+            my$("im").style.top = e.clientY + "px";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+</head>
+
+<body>
+    <a href="http://www.baidu.com" id="ak">百度</a>
+    <script src="common.js"></script>
+    <script>
+        my$("ak").onclick = function(e) {
+            alert("被点了");
+            return false; //return  false  可以阻止页面跳转，最好用这种方法，用下面的方法，要考虑有些浏览器不支持的情况
+            //window.event.preventDefault();//阻止浏览器的默认的事件，但是IE不支持，window.event.preventDefault()
+            //e.preventDefault();//阻止浏览器的默认的事件（也可以阻止浏览器的跳转）,但是IE8不支持参数e，IE8支持window.event
+
+        };
+    </script>
+</body>
+
+</html>

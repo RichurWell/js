@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+                                   BOM中顶级对象：Window
+                                   DOM中顶级对象：Document
+                                   JQuery中的顶级对象：$
+                                
+
+                                      offset系列：主要是获取元素的相关属性的值：
+                                           offsetWidth:获取元素的宽
+                                           offsetHeight:获取元素的高
+                                           offsetLeft：获取元素距离左边值
+                                           offsetTop：获取元素距离上面的值
+
+                                      完整轮波图：
+                                          第一步：根据ul中li个数（图片个数），动态创建li，并且加入ol中作为小按钮，并且为每个ol中的li添加鼠标
+                                                 进入事件，（添加事件之前，我们需要先把索引保存在每个li的自定义属性中），鼠标进入li的时候做排他
+                                                 功能（背景颜色），移动图片（图片整理移动），每次移动到是图片的宽度，图片宽度与相框一致，调用
+                                                 动画函数，移动ul，移动的是索引值乘图片宽度，并且把索引值存储在全局变量中，pic
+                                          第二步：创建li之后，1---设置ol中第一个li有默认的背景颜色
+                                                            2----把ul中的第一个li克隆一下（无缝链接的效果）追加到ul 中所有的li的最后面（无效
+                                                            效果：页面中的第一个图片和最后一个图片是最后一个图片）
+                                          第三步：左右焦点的div显示和隐藏
+                                          第四步：为左右按钮注册点击事件 
+                                                 每次点击右边的按钮，先判断pic的值，是不是ul中的li.length-1，（pic最大是5），如果是5
+                                                 我们需要设置pic=0，同时设置ul 距离左边left值为0，此时pic立刻加1，移动ul，用户看到的
+                                                 就是第二张图片，
+                                                 设置按钮的背景颜色
+                                                 左边按钮，需要判断pic的值是不是0，如果是0此时pic=5，ul的left为5*图片的宽度
+                                        第五步：自动播放，在页面加载的时候，启动一个定时器，里面调用的就是右边按钮的点击事件的处理函数
+
+                                        
+                                                 
+                                                 
+                                        
+                                
+                                */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

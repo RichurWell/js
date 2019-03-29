@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 300px;
+            border: 2px solid red;
+            border-left: 30px solid red;
+        }
+    </style>
+    <script src="common.js"></script>
+    <script>
+        /*
+                          offset系列：获取元素的宽、高、left、top，parent
+                                      offsetWidth    元素的宽（有边框）
+                                      offsetTop      元素距离顶部的值
+                                      offsetHeight   元素的高（有边框）
+                                      offsetLeft    元素距离左边的值
+                                      offsetParent  
+                          scroll系列
+                              scrollLeft：向左卷曲出去的距离
+                              scrollTop：向上
+                              scrollWidth：元素中内容实际的宽度（不包括边框），如果内容很少或者没有内容就是元素自身的宽
+                              scrollHeight：元素中内容实际的高度（不包括边框），如果内容很少或者没有内容就是元素自身的高
+                          
+                        client：
+                              clientWidth：可视区域的宽（无边框），边框内
+                              clientHeight：可视区域的高（无边框）
+                              clientLeft：做边框宽度
+
+                                                                                          */
+    </script>
+
+
+</head>
+
+<body>
+    <div id="dv"></div>
+    <script>
+        console.log(my$("dv").clientWidth) //div可视区域宽(没有边框)
+        console.log(my$("dv").clientLeft)
+        console.log(my$("dv").clientTop)
+    </script>
+</body>
+
+</html>
